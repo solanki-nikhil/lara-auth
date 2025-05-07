@@ -38,19 +38,11 @@ class UserController extends Controller
     }
 
     public function dashboard(){
-      if (Auth::check()) {
-        return view('dashboard');
-      } else {
-        return redirect()->route('login')->with('error','Please login first!');
+     return view('dashboard');
       }
-    }
 
     public function innerpage(){
-      if (Auth::check()) {
-        return view('inner');
-      } else {
-        return redirect()->route('login')->with('error','Please login first!');
-      }
+     return view('innerpage'); 
       
     }
     
