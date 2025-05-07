@@ -19,7 +19,7 @@ Route::post('/loginmatch',[UserController::class,'login'])->name('loginmatch');
 
 Route::middleware(['IsUserValid',TestUser::class])->group(function () {
     Route::get('/dashboard',[UserController::class,'dashboard'])->name('dashboard');  
-    Route::get('/innerpage',[UserController::class,'innerpage'])->name('innerpage');
+    Route::get('/innerpage',[UserController::class,'innerpage'])->name('innerpage')->withoutMiddleware([TestUser::class]);
 });
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
