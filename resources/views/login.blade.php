@@ -1,7 +1,7 @@
-@extends()('layouts.layout')
+@extends('layouts.layout')
 @section('title', 'Login')
 @section('content')
-<form action="">
+<form action="{{route('loginmatch')}}" method="POST">
     {{-- Display validation errors if any --}}
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -23,6 +23,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
     <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
-    <a href="{{ route('home') }}" class="btn btn-secondary">Home</a>
+
 </form>
 @endsection

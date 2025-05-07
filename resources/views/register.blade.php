@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('title', 'Register')
 @section('content')
-<form action="{{ route('register') }}" method="POST" class="mt-4">
+<form action="{{ route('registersave') }}" method="POST" class="mt-4">
     {{-- Display validation errors if any --}}
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -11,6 +11,7 @@
                 @endforeach
             </ul>
         </div> 
+        @endif
     @csrf
     <div class="mb-3">
         <label for="name" class="form-label">Name</label>
@@ -30,6 +31,5 @@
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
     <a href="{{ route('login') }}" class="btn btn-secondary">Login</a>
-    <a href="{{ route('home') }}" class="btn btn-secondary">Home</a>
 </form>
 @endsection
